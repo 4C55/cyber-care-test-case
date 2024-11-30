@@ -11,8 +11,8 @@ PIP = $(VENV)/bin/pip
 setup:
 	$(PYTHON) -m venv $(VENV)
 	$(PIP) install poetry
-	$(PYTHON) -m poetry install
-	$(PYTHON) consumer/manage.py migrate
+	$(PYTHON_BIN) -m poetry install
+	$(PYTHON_BIN) consumer/manage.py migrate
 
 run-consumer:
 	$(PYTHON_BIN) consumer/manage.py runserver $(PORT)
